@@ -1,12 +1,12 @@
 import Container from "../components/container";
 import MoreStories from "../components/more-stories";
-import HeroPost from "../components/hero-post";
+// import HeroPost from "../components/hero-post";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
 import Post from "../types/post";
-import Header from "components/header";
+// import Header from "components/header";
 
 type Props = {
   allPosts: Post[];
@@ -21,9 +21,9 @@ const Index = ({ allPosts }: Props) => {
         <Head>
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
-        <Header />
-        <Container>
-          {heroPost && (
+        <div className="">
+          {/* <Container> */}
+          {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
@@ -32,9 +32,11 @@ const Index = ({ allPosts }: Props) => {
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
             />
-          )}
+          )} */}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
+
+          {/* </Container> */}
+        </div>
       </Layout>
     </>
   );

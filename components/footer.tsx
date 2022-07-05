@@ -1,14 +1,15 @@
 import Container from "./container";
 import Link from "next/link";
+import Tag from "atom/tag";
 
 const Footer = () => {
   return (
     <footer className="bg-neutral-50 ">
-      <div className="w-11/12 m-auto border-t-2 border-neutral-200">
+      <div className="w-11/12 mx-auto border-t-2 border-neutral-200">
         <div className="py-8 flex flex-col lg:flex-row items-center justify-between">
           <Link href="/">
-            <a className="border-b-2 border-black m-auto hover:text-pink-500 duration-200 hover:border-pink-500 leading-none">
-              <p className="">back to top</p>
+            <a className="m-auto hover:text-pink-500 duration-200">
+              <p className="underline">back to top</p>
             </a>
           </Link>
 
@@ -28,6 +29,7 @@ const Footer = () => {
               Github
             </a>
           </div>
+          <Tag category="fa" />
         </div>
       </div>
     </footer>
