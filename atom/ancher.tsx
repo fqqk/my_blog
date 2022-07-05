@@ -8,7 +8,7 @@ type Props = {
 const Ancher = ({ children, path }: Props) => {
   return (
     <Link href={path}>
-      <a className="font-bold font-sans text-lg hover:text-pink-500">
+      <a className="font-bold font-sans text-lg hover:text-pink-500 duration-200">
         {children}
       </a>
     </Link>
