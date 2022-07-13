@@ -21,10 +21,8 @@ const PostPreview = ({
   slug,
 }: Props) => {
   return (
-    <div>
-      <div className="mb-5">
-        {/* <CoverImage slug={slug} title={title} src={coverImage} /> */}
-      </div>
+    <div className="bg-red-300 w-3/5 mx-auto">
+      <p>post-preview.tsx</p>
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
@@ -33,7 +31,6 @@ const PostPreview = ({
           <a className="underline">{title}</a>
         </Link>
       </h3>
-      {/* <p className="text-lg leading-relaxed mb-4">{excerpt}</p> */}
     </div>
   );
 };

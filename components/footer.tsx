@@ -29,7 +29,7 @@ const Footer = () => {
               Github
             </a>
           </div>
-          <Tag category="fa" />
+          <Tag category="tagテスト" />
         </div>
       </div>
     </footer>

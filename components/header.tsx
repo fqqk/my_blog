@@ -2,7 +2,7 @@ import Ancher from "atom/ancher";
 
 const Header = () => {
   return (
-    <header className="fixed bg-neutral-50 w-full">
+    <header className="fixed top-0 bg-neutral-50 w-full">
       <nav className="w-11/12 border-b-2 border-neutral-200 flex lg:flex-row items-center justify-between px-48 py-6 m-auto">
         <div className="space-x-10 items-center  ">
           <Ancher path="/">Home</Ancher>
