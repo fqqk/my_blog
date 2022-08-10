@@ -1,18 +1,17 @@
+import Header from "components/header";
 import Footer from "./footer";
 import Meta from "./meta";
-import Header from "./header";
 
 type Props = {
-  preview?: boolean;
   children: React.ReactNode;
 };
 
-const Layout = ({ preview, children }: Props) => {
+const Layout = ({ children }: Props) => {
   return (
     <>
       <Meta />
       <Header />
-      <div className="min-h-screen bg-neutral-50">
+      <div className="min-h-screen w-4/5 m-auto border-pink-400 border-x-2">
         <main>{children}</main>
       </div>
       <Footer />

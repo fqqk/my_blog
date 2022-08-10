@@ -5,10 +5,11 @@ import Tag from "atom/tag";
 const Footer = () => {
   return (
     <footer className="bg-neutral-50 ">
-      <div className="w-11/12 mx-auto border-t-2 border-neutral-200">
-        <div className="py-8 flex flex-col lg:flex-row items-center justify-between">
+      <hr className="w-11/12 border-b-2 border-neutral-200 m-auto z-0" />
+      <div className="w-4/5 mx-auto border-x-2 border-pink-400">
+        <div className="py-4 flex flex-col lg:flex-row items-center justify-between">
           <Link href="/">
-            <a className="m-auto hover:text-pink-500 duration-200">
+            <a className="ml-12 hover:text-pink-500 duration-200">
               <p className="underline">back to top</p>
             </a>
           </Link>
@@ -17,19 +18,19 @@ const Footer = () => {
             <a
               href="https://twitter.com/fqqk_t0ma"
               target="blank"
-              className=" hover:text-pink-500 font-semibold  py-3 px-12  duration-200"
+              className=" hover:text-pink-500 font-semibold  py-3 px-8  duration-200"
             >
               Twitter
             </a>
             <a
               href="https://github.com/fqqk"
               target="blank"
-              className=" hover:text-pink-500 font-semibold  py-3 px-12  duration-200"
+              className=" hover:text-pink-500 font-semibold  py-3 px-8  duration-200"
             >
               Github
             </a>
           </div>
-          <Tag category="tagテスト" />
+          {/* <Tag category="tagテスト" /> */}
         </div>
       </div>
     </footer>
