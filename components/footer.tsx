@@ -4,7 +4,7 @@ import Tag from "atom/tag";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-50 ">
+    <footer className="bg-neutral-50 dark:bg-gray-800">
       <hr className="w-11/12 border-b-2 border-neutral-200 m-auto z-0" />
       <div className="w-4/5 mx-auto border-x-2 border-pink-400">
         <div className="py-4 flex flex-col lg:flex-row items-center justify-between">
@@ -30,7 +30,6 @@ const Footer = () => {
               Github
             </a>
           </div>
-          {/* <Tag category="tagテスト" /> */}
         </div>
       </div>
     </footer>
