@@ -2,7 +2,8 @@
 title: "markdown記法"
 excerpt: "testtest"
 coverImage: "/assets/blog/hello-world/cover.jpg"
-date: "2020-03-16T05:35:07.322Z"
+created_at: "2020-03-16T05:35:07.322Z"
+updated_at: "2020-03-17T05:35:07.322Z"
 ogImage:
   url: "/assets/blog/hello-world/cover.jpg"
 ---
@@ -72,10 +73,11 @@ https://www.google.co.jp/
 
 ~~取り消し線~~
 
-~~~ruby
+```ruby
 　 class Hoge
 　 def hoge
 　 print 'hoge'
 　 end
 　 end
 　~~~
+```

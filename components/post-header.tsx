@@ -1,28 +1,33 @@
 import DateFormatter from "./date-formatter";
 import CoverImage from "./cover-image";
 import PostTitle from "./post-title";
-import Author from "../types/author";
 
 type Props = {
   title: string;
   coverImage: string;
-  date: string;
-  author: Author;
+  created_at: string;
+  updated_at: string;
 };
 
-const PostHeader = ({ title, coverImage, date, author }: Props) => {
+const PostHeader = ({ title, coverImage, created_at, updated_at }: Props) => {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12"></div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
-      </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6"></div>
-        <div className="mb-6 text-lg">
-          <DateFormatter dateString={date} />
+      <div className="w-3/5 mx-auto">
+        <PostTitle>{title}</PostTitle>
+        <div>
+          <div className=" text-gray-400">
+            公開日:
+            <DateFormatter dateString={created_at} />
+          </div>
+          <div className=" text-gray-400">
+            最終更新日:
+            <DateFormatter dateString={updated_at} />
+          </div>
         </div>
+      </div>
+
+      <div className="mb-8 md:mb-16 sm:mx-0">
+        {/* <CoverImage title={title} src={coverImage} /> */}
       </div>
     </>
   );

@@ -36,12 +36,12 @@ const Post = ({ post, morePosts, preview }: Props) => {
                 </title>
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
-              {/* <PostHeader
+              <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-              /> */}
+                created_at={post.created_at}
+                updated_at={post.updated_at}
+              />
               <PostBody content={post.content} />
             </article>
           </>
@@ -62,7 +62,8 @@ type Params = {
 export async function getStaticProps({ params }: Params) {
   const post = getPostBySlug(params.slug, [
     "title",
-    "date",
+    "created_at",
+    "updated_at",
     "slug",
     "author",
     "content",
