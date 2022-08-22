@@ -6,6 +6,8 @@ type Props = {
 };
 
 const MoreStories = ({ posts }: Props) => {
+  console.log(posts);
+
   return (
     <section className="pt-10">
       <div className="my-20">
@@ -17,6 +19,7 @@ const MoreStories = ({ posts }: Props) => {
             created_at={post.created_at}
             slug={post.slug}
             excerpt={post.excerpt}
+            categories={post.categories}
           />
         ))}
       </div>
