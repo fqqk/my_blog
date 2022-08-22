@@ -1,6 +1,5 @@
 import Container from "./container";
 import Link from "next/link";
-import Tag from "atom/tag";
 
 const Footer = () => {
   return (
