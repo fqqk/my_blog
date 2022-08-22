@@ -7,17 +7,25 @@
     "typecheck": "tsc"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.4",
+    "@types/prismjs": "^1.26.0",
+    "babel-plugin-prismjs": "^2.1.0",
     "classnames": "2.3.1",
     "date-fns": "2.21.3",
     "gray-matter": "4.0.3",
     "iconoir-react": "^5.1.4",
     "next": "latest",
     "next-themes": "^0.2.0",
+    "prismjs": "^1.28.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "rehype-stringify": "^9.0.3",
     "remark": "14.0.2",
     "remark-html": "15.0.1",
-    "typescript": "^4.2.4"
+    "remark-parse": "^10.0.1",
+    "remark-rehype": "^10.1.0",
+    "typescript": "^4.2.4",
+    "unified": "^10.1.2"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
