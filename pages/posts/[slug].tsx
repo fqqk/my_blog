@@ -23,13 +23,13 @@ const Post = ({ post, morePosts, preview }: Props) => {
     return <ErrorPage statusCode={404} />;
   }
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32 pt-10">
+            <article className="pt-10 pb-32">
               <Head>
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
@@ -38,9 +38,9 @@ const Post = ({ post, morePosts, preview }: Props) => {
               </Head>
               <PostHeader
                 title={post.title}
-                coverImage={post.coverImage}
                 created_at={post.created_at}
                 updated_at={post.updated_at}
+                categories={post.categories}
               />
               <PostBody content={post.content} />
             </article>
@@ -69,6 +69,7 @@ export async function getStaticProps({ params }: Params) {
     "content",
     "ogImage",
     "coverImage",
+    "categories",
   ]);
   const content = await markdownToHtml(post.content || "");
 
