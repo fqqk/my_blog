@@ -9,6 +9,7 @@ type PostType = {
     url: string;
   };
   content: string;
+  categories: string[];
 };
 
 export default PostType;
