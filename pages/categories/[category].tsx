@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import PostCard from "../../components/PostCard";
 import Layout from "components/layout";
+import PostPreview from "components/post-preview";
 
 export const getStaticProps = ({ params }) => {
   const files = fs.readdirSync("_posts");
@@ -50,6 +51,20 @@ const Category = ({ posts }) => {
           {posts.map((post) => (
             <PostCard key={post.slug} post={post} />
           ))}
+          <div className="my-44">test</div>
+          <section className="pt-10">
+            <div className="my-20">
+              {posts.map((post) => (
+                <PostPreview
+                  key={post.slug}
+                  title={post.frontMatter.title}
+                  created_at={post.frontMatter.created_at}
+                  slug={post.slug}
+                  categories={post.frontMatter.categories}
+                />
+              ))}
+            </div>
+          </section>
         </div>
       </div>
     </Layout>

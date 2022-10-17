@@ -1,24 +1,14 @@
 import DateFormatter from "./date-formatter";
-import CoverImage from "./cover-image";
 import Link from "next/link";
 
 type Props = {
   title: string;
-  coverImage: string;
   created_at: string;
-  excerpt: string;
   slug: string;
   categories: string[];
 };
 
-const PostPreview = ({
-  title,
-  coverImage,
-  created_at,
-  excerpt,
-  slug,
-  categories,
-}: Props) => {
+const PostPreview = ({ title, created_at, slug, categories }: Props) => {
   return (
     <div className="w-4/6 mx-auto my-10">
       <div className="text-lg">

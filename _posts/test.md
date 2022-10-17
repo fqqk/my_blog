@@ -1,28 +1,18 @@
 ---
-title: "testブログ"
-excerpt: "testtest"
+title: "自己紹介"
+excerpt: "profile"
 coverImage: "/assets/blog/hello-world/cover.jpg"
-created_at: "2020-03-16T05:35:07.322Z"
-updated_at: "2020-03-17T05:35:07.322Z"
+created_at: "1998-06-08"
+updated_at: "2022-09-10"
 ogImage:
   url: "/assets/blog/hello-world/cover.jpg"
-categories: ["react"]
+categories: ["me"]
 ---
 
-## test
+## はじめまして
 
-こちらテストです
-人と違うところに目をつけ、または本来あるべきものが欠けているということに気づくこと
+> fajifajia
 
-それができれば好機を掴み、解決方法を発見し、警告に注意を払い、近道を見つけ、現状打開の案をつかみ、勝利をものにすることができる。
+## 経歴
 
-```js
-import Prism from "prismjs";
-
-const Component = ({ post }) => {
-  useEffect(() => {
-    Prism.highlightAll();
-  });
-  return <div dangerouslySetInnerHTML={{ __html: post.content }} />;
-};
-```
+## ぼくの中の"つよつよ"ってなんだろう？

@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="w-4/5 flex lg:flex-row items-center justify-between px-10 py-6 mx-auto border-x-2 border-pink-400">
         <div className="space-x-10 items-center  ">
           <Ancher path="/">Home</Ancher>
-          <Ancher path="#">Profile</Ancher>
+          <Ancher path="/profile">Profile</Ancher>
           <Ancher path="#">Dev</Ancher>
           <Ancher path="#">Posts</Ancher>
         </div>
