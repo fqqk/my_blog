@@ -1,6 +1,5 @@
 import fs from "fs";
 import matter from "gray-matter";
-import PostCard from "../../components/PostCard";
 import Layout from "components/layout";
 import PostPreview from "components/post-preview";
 
@@ -34,8 +33,30 @@ export const getStaticProps = ({ params }) => {
 };
 
 export const getStaticPaths = () => {
-  const categories = ["react", "typescript"];
-  const paths = categories.map((category) => ({ params: { category } }));
+  const files = fs.readdirSync("_posts");
+  const posts = files.map((fileName) => {
+    const slug = fileName.replace(/\.md$/, "");
+    const fileContent = fs.readFileSync(`_posts/${fileName}`, "utf-8");
+    const { data } = matter(fileContent);
+    return {
+      frontMatter: data,
+      slug,
+    };
+  });
+
+  const duplicate_categories = posts.flatMap((post) => {
+    return post.frontMatter.categories;
+  });
+
+  const unduplicate_categories = duplicate_categories.filter(
+    (el, index, array) => {
+      return array.indexOf(el) === index;
+    }
+  );
+
+  const paths = unduplicate_categories.map((category) => ({
+    params: { category },
+  }));
 
   return {
     paths,

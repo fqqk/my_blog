@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="py-4 flex flex-col lg:flex-row items-center justify-between">
           <Link href="/">
             <a className="ml-12 hover:text-pink-500 duration-200">
-              <p className="underline">back to top</p>
+              <p className="underline">↑back to top</p>
             </a>
           </Link>
 
