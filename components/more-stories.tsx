@@ -6,7 +6,6 @@ type Props = {
 };
 
 const MoreStories = ({ posts }: Props) => {
-  console.log(posts);
   return (
     <section className="pt-10">
       <div className="my-20">

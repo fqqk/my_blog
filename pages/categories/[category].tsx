@@ -47,25 +47,19 @@ const Category = ({ posts }) => {
   return (
     <Layout>
       <div className="my-8">
-        <div className="grid grid-cols-3 gap-4">
-          {posts.map((post) => (
-            <PostCard key={post.slug} post={post} />
-          ))}
-          <div className="my-44">test</div>
-          <section className="pt-10">
-            <div className="my-20">
-              {posts.map((post) => (
-                <PostPreview
-                  key={post.slug}
-                  title={post.frontMatter.title}
-                  created_at={post.frontMatter.created_at}
-                  slug={post.slug}
-                  categories={post.frontMatter.categories}
-                />
-              ))}
-            </div>
-          </section>
-        </div>
+        <section className="pt-10">
+          <div className="my-20">
+            {posts.map((post) => (
+              <PostPreview
+                key={post.slug}
+                title={post.frontMatter.title}
+                created_at={post.frontMatter.created_at}
+                slug={post.slug}
+                categories={post.frontMatter.categories}
+              />
+            ))}
+          </div>
+        </section>
       </div>
     </Layout>
   );

@@ -656,7 +656,7 @@ function-bind@^1.1.1:
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
 
-github-slugger@^1.0.0:
+github-slugger@^1.0.0, github-slugger@^1.1.1:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-1.4.0.tgz#206eb96cdb22ee56fdc53a28d5a302338463444e"
   integrity sha512-w0dzqw/nt51xMVmlaV1+JRzN+oCa1KfcgGEWhxUG16wbdA+Xnt/yoFO8Z8x/V82ZcZ0wy6ln9QDup5avbhiDhQ==
@@ -714,6 +714,18 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hast-util-has-property@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/hast-util-has-property/-/hast-util-has-property-2.0.0.tgz#c15cd6180f3e535540739fcc9787bcffb5708cae"
+  integrity sha512-4Qf++8o5v14us4Muv3HRj+Er6wTNGA/N9uCaZMty4JWvyFKLdhULrv4KE1b65AthsSO9TXSZnjuxS8ecIyhb0w==
+
+hast-util-heading-rank@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/hast-util-heading-rank/-/hast-util-heading-rank-2.1.0.tgz#c39f34fa8330ebfec03a08b5d5019ed56122029c"
+  integrity sha512-w+Rw20Q/iWp2Bcnr6uTrYU6/ftZLbHKhvc8nM26VIWpDqDMlku2iXUVTeOlsdoih/UKQhY7PHQ+vZ0Aqq8bxtQ==
+  dependencies:
+    "@types/hast" "^2.0.0"
+
 hast-util-is-element@^2.0.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/hast-util-is-element/-/hast-util-is-element-2.1.2.tgz#fc0b0dc7cef3895e839b8d66979d57b0338c68f3"
@@ -744,6 +756,13 @@ hast-util-to-html@^8.0.0:
     space-separated-tokens "^2.0.0"
     stringify-entities "^4.0.2"
     unist-util-is "^5.0.0"
+
+hast-util-to-string@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/hast-util-to-string/-/hast-util-to-string-2.0.0.tgz#b008b0a4ea472bf34dd390b7eea1018726ae152a"
+  integrity sha512-02AQ3vLhuH3FisaMM+i/9sm4OXGSq1UhOOCpTLLQtHdL3tZt7qil69r8M8iDkZYyC0HCFylcYoP+8IO7ddta1A==
+  dependencies:
+    "@types/hast" "^2.0.0"
 
 hast-util-whitespace@^2.0.0:
   version "2.0.0"
@@ -990,7 +1009,7 @@ mdast-util-to-string@^3.0.0, mdast-util-to-string@^3.1.0:
   resolved "https://registry.yarnpkg.com/mdast-util-to-string/-/mdast-util-to-string-3.1.0.tgz#56c506d065fbf769515235e577b5a261552d56e9"
   integrity sha512-n4Vypz/DZgwo0iMHLQL49dJzlp7YtAJP+N07MZHpjPf/5XJuHUWstviF4Mn2jEiR/GNmtnRRqnwsXExk3igfFA==
 
-mdast-util-toc@^6.1.0:
+mdast-util-toc@^6.0.0, mdast-util-toc@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/mdast-util-toc/-/mdast-util-toc-6.1.0.tgz#1f38419f5ce774449c8daa87b39a4d940b24be7c"
   integrity sha512-0PuqZELXZl4ms1sF7Lqigrqik4Ll3UhbI+jdTrfw7pZ9QPawgl7LD4GQ8MkU7bT/EwiVqChNTbifa2jLLKo76A==
@@ -1462,6 +1481,19 @@ readdirp@~3.6.0:
   dependencies:
     picomatch "^2.2.1"
 
+rehype-slug@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/rehype-slug/-/rehype-slug-5.0.1.tgz#6e732d0c55b3b1e34187e74b7363fb53229e5f52"
+  integrity sha512-X5v3wV/meuOX9NFcGhJvUpEjIvQl2gDvjg3z40RVprYFt7q3th4qMmYLULiu3gXvbNX1ppx+oaa6JyY1W67pTA==
+  dependencies:
+    "@types/hast" "^2.0.0"
+    github-slugger "^1.1.1"
+    hast-util-has-property "^2.0.0"
+    hast-util-heading-rank "^2.0.0"
+    hast-util-to-string "^2.0.0"
+    unified "^10.0.0"
+    unist-util-visit "^4.0.0"
+
 rehype-stringify@^9.0.3:
   version "9.0.3"
   resolved "https://registry.yarnpkg.com/rehype-stringify/-/rehype-stringify-9.0.3.tgz#70e3bd6d4d29e7acf36b802deed350305d2c3c17"
@@ -1508,6 +1540,15 @@ remark-stringify@^10.0.0:
   dependencies:
     "@types/mdast" "^3.0.0"
     mdast-util-to-markdown "^1.0.0"
+    unified "^10.0.0"
+
+remark-toc@^8.0.1:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/remark-toc/-/remark-toc-8.0.1.tgz#f3e07ea13734f1c531e3d3460e58babe31d17cd7"
+  integrity sha512-7he2VOm/cy13zilnOTZcyAoyoolV26ULlon6XyCFU+vG54Z/LWJnwphj/xKIDLOt66QmJUgTyUvLVHi2aAElyg==
+  dependencies:
+    "@types/mdast" "^3.0.0"
+    mdast-util-toc "^6.0.0"
     unified "^10.0.0"
 
 remark@14.0.2:
