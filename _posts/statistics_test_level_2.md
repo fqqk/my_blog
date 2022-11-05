@@ -1,48 +1,51 @@
 ---
-title: "統計検定2級の受験を終えて"
-coverImage: "/assets/blog/hello-world/cover.jpg"
+title: "After taking the Statistics Test Level 2"
 created_at: "2022-10-24"
 updated_at: "2022-10-24"
-ogImage:
-  url: "/assets/blog/hello-world/cover.jpg"
 categories: ["statistics"]
 ---
 
 ## 目次
 
-## 統計検定 2 級を受けようと思った経緯
+## Why the Statistics Test Level 2?
 
-僕自身、世の中の真理を知ること、それについて理解することが楽しいと感じる人間だ。
-大学時代、人間関係で研究室をしたことに後悔はないし、卒業できたのはあの研究室だったからだとも思っている。
-しかし、もし人間関係などを考えずに選ぶのであれば統計学や機械学習を勉強できる研究室を選んでいたなとも思っている。
-大学も卒業したし、せっかくだからこの機会に好きな方の勉強を突き詰めて何か面白いことができたらいいな、という軽い気持ちで
-勉強を始めた。
-まずは大学 1,2 年の統計学の基礎的な知識を習得するために統計検定を受験することにした。
+I consider myself a person who enjoys knowing the truth of the world and understanding about it.
+I have no regrets about choosing my lab in college because of my relationships with people, and I also believe that it was that lab that allowed me to graduate.
+However, if I had chosen a laboratory without considering human relations, I would have chosen a laboratory where I could study statistics and machine learning.
+I started studying with a light heart, thinking that since I had graduated from university, I would like to take this opportunity to do something interesting by pursuing my favorite field of study.
+I started my studies with a light heart.
+First of all, I decided to take the statistics exam to acquire basic knowledge of statistics in the first and second years of college.
 
-## 学習期間
+## study period
 
-時間にするとおおよそ 150 時間程度。
+In terms of time, it is roughly 150 hours.
 
-これは集中できたであろう時間であって、実際は 250 時間くらいを費やしていると思う。
+This is the amount of time I would have been able to concentrate; in reality, I think I spent about 250 hours.
 
-ちなみに僕は大学では数学と物理を専攻しており、その中でも「数学？物理？よくわからない。」「とりあえず単位だけ取れるように勉強しとけばいいや」
-くらいのスタンスで大学時代を過ごしていた程度の実力である。
-大学受験を控えている高校生よりも数学や物理はできる気がしない。
+By the way, I majored in mathematics and physics in college. Physics? I don't really know." I was just studying so that I could get credits.
+I spent my university days with the stance of "I don't know much about math and physics.
+I don't think I can do math and physics better than high school students who are preparing for the university entrance exam.
 
-## 2 級受験を終えて
+## After taking the Level 2 exam...
 
-10 月 24 日まで頑張れ
+On October 23rd, I successfully passed the 2nd level of the Statistics Test!!!
+The passing line is 60 points, and I scored 68 points.
+I am satisfied with the result because I personally felt that the questions this time were difficult.
+As for the trend of the questions, there were many probability calculation questions, and the way the questions were presented was a little different from past papers, giving me the impression that the questions were based on real social problems.
+I think there was a question on PM2.5.
+I got the impression that many of the questions in the latter half of the test could be solved by remembering the formulas, and it was significant that I was able to catch up here.
+I would have liked to get 80% if possible. But a pass is a pass, so I'm proud of myself.
 
-## 今後について
+## Next
 
-今後は統計検定 1 級合格に向けて大学数学をイチから学びなおしていきたい。
+In the future, I would like to relearn university mathematics from scratch in order to pass the first level of the Statistics Proficiency Test.
 
-それと並行して kagle などのコンペにて、これまで習得してきた知識を実際の社会問題に適用させる練習などもしていきたいと考えている。
+At the same time, I would like to practice applying the knowledge I have acquired so far to actual social problems in competitions such as kagle.
 
-最終的にはやはり、世の中の知らない事実に気づいたり、見つけたりしてみたいという目的がある。
-それがしっかりできるようになるまで、勉強を頑張っていきたい。
+Ultimately, my goal is to discover and discover facts about the world that we don't know.
+Until I am able to do so, I will continue to study hard.
 
-## 役に立ったものたち
+## Thanks for your support.
 
 - [bellcurve 統計学の時間](https://bellcurve.jp/statistics/course/)
 - [統計検定過去問](https://www.toukei-kentei.jp/prepare/kakomon/)
