@@ -1,0 +1,24 @@
+---
+title: "init"
+created_at: "1998-06-08"
+updated_at: "2022-09-10"
+categories: ["me"]
+---
+
+## 目次
+
+## hello everyone✋
+
+In this blog, I will write about what I have learned about technology and my personal interests.
+I'm also on twitter👇, so feel free to get involved.
+In this blog, I write in English as well as study English.
+
+## what about fqqk.
+
+Nice to meet you, my name is fqqk.
+I usually work as a backend engineer, use ruby on rails and javascript in my business.
+I am from Aomori Prefecture and born in 1998.
+
+## Target
+
+I look forward to improving my technical skills🔥 and meeting good friends👊 through this blog.
