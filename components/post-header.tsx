@@ -25,11 +25,11 @@ const PostHeader = ({ title, created_at, updated_at, categories }: Props) => {
           </div>
           <div>
             <div className="text-gray-400 text-right">
-              公開日:
+              created_at:
               <DateFormatter dateString={created_at} />
             </div>
             <div className="text-gray-400 text-right">
-              最終更新日:
+              updated_at:
               <DateFormatter dateString={updated_at} />
             </div>
           </div>
