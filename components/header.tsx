@@ -3,7 +3,7 @@ import { ChangeThemeButton } from "atom/ChangeThemeButton";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 bg-neutral-50 w-full dark:bg-gray-800">
+    <header className="fixed top-0 bg-neutral-50 w-full dark:bg-gray-800 z-50">
       <nav className="w-4/5 flex lg:flex-row items-center justify-between px-10 py-6 mx-auto border-x-2 border-pink-400">
         <div className="space-x-10 items-center  ">
           <Ancher path="/">Home</Ancher>
