@@ -1,7 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Pagination from "../../components/Pagination";
-import PostCard from "../../components/PostCard";
 import Layout from "components/layout";
 import PostPreview from "components/post-preview";
 import Head from "next/head";
