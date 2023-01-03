@@ -9,7 +9,7 @@ import matter from "gray-matter";
 import Pagination from "components/Pagination";
 import PostPreview from "components/post-preview";
 
-const PAGE_SIZE = 2;
+const PAGE_SIZE = 10;
 
 const range = (start, end, length = end - start + 1) =>
   Array.from({ length }, (_, i) => start + i);
@@ -27,7 +27,7 @@ const Index = ({ posts, pages }: Props) => {
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>fqqk_devlog</title>
         </Head>
         {/* <div>{posts.length > 0 && <MoreStories posts={morePosts} />}</div> */}
         <section className="pt-10">

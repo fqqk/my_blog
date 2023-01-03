@@ -7,7 +7,7 @@ import PostPreview from "components/post-preview";
 import Head from "next/head";
 import { CMS_NAME } from "lib/constants";
 
-const PAGE_SIZE = 2;
+const PAGE_SIZE = 10;
 
 const range = (start, end, length = end - start + 1) =>
   Array.from({ length }, (_, i) => start + i);

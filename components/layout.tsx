@@ -11,7 +11,7 @@ const Layout = ({ children }: Props) => {
     <>
       <Meta />
       <Header />
-      <div className="min-h-screen w-4/5 m-auto border-pink-400 border-x-2">
+      <div className="min-h-screen w-11/12 m-auto border-pink-400 border-x-2">
         <main>{children}</main>
       </div>
       <Footer />
