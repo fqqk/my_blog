@@ -9,7 +9,7 @@ const DateFormatter = ({ dateString }: Props) => {
 
   return (
     <time dateTime={dateString} className="sp:text-xs tab:text-sm pc:text-lg">
-      {format(date, "yyyy.MM.d HH:mm")}
+      {format(date, "yyyy.MM.dd")}
     </time>
   );
 };

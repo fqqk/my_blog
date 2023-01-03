@@ -1,6 +1,5 @@
 import DateFormatter from "./date-formatter";
 import PostTitle from "./post-title";
-import Link from "next/link";
 import { createTags } from "lib/createTags";
 
 type Props = {
