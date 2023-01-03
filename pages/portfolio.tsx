@@ -1,7 +1,7 @@
 import Layout from "components/layout";
 import Container from "components/container";
 
-const Profile = () => {
+const Portfolio = () => {
   return (
     <Layout>
       <Container>
@@ -13,4 +13,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Portfolio;
