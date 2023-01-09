@@ -7,7 +7,7 @@ import Post from "../types/post";
 import fs from "fs";
 import matter from "gray-matter";
 import Pagination from "components/Pagination";
-import PostPreview from "components/post-preview";
+import ArchiveMenu from "components/ArchiveMenu";
 
 const PAGE_SIZE = 10;
 
@@ -22,6 +22,13 @@ type Props = {
 
 const Index = ({ posts, pages, allPosts }: Props) => {
   const morePosts = allPosts;
+  // Note: 'yyyy-mm-dd -> yyyy'
+  const created_at_list = morePosts.map((post) => post.created_at.slice(0, 4));
+  // Note: データの重複をなくし、年配列を作成
+  // Memo: posts/indexでも使用しているので後ほど共通化
+  const years = created_at_list.filter(
+    (element, index) => created_at_list.indexOf(element) === index
+  );
 
   return (
     <>
@@ -29,7 +36,9 @@ const Index = ({ posts, pages, allPosts }: Props) => {
         <Head>
           <title>fqqk_devlog</title>
         </Head>
-        <div>{posts.length > 0 && <MoreStories posts={morePosts} />}</div>
+        <ArchiveMenu years={years} />
+        {posts.length > 0 && <MoreStories posts={morePosts} />}
+
         <Pagination pages={pages} />
       </Layout>
     </>
