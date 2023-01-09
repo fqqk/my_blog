@@ -1,4 +1,4 @@
-import Ancher from "atom/ancher";
+import Ancher from "atom/PostAncher";
 import { ChangeThemeButton } from "atom/ChangeThemeButton";
 import useMedia from "use-media";
 
