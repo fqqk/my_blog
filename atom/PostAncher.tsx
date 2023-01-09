@@ -5,7 +5,7 @@ type Props = {
   path: string;
 };
 
-const Ancher = ({ children, path }: Props) => {
+const PostAncher = ({ children, path }: Props) => {
   return (
     <Link href={path}>
       <a className="font-sans font-bold hover:text-pink-500 duration-200 sp:text-xs tab:text-sm pc:text-lg">
@@ -15,4 +15,4 @@ const Ancher = ({ children, path }: Props) => {
   );
 };
 
-export default Ancher;
+export default PostAncher;

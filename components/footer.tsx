@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { SiAcclaim } from "react-icons/si";
+import { Link as Scroll } from "react-scroll";
 
 const Footer = () => {
   return (
@@ -17,14 +17,12 @@ const Footer = () => {
               <FaGithub size={"1.5rem"} />
             </a>
           </div>
-          <Link href="/">
-            <a className="hover:text-pink-500 duration-200 sp:text-xs tab:text-base pc:text-lg">
-              <div className="flex items-center">
-                <SiAcclaim />
-                <p className="underline ml-2">back to top</p>
-              </div>
-            </a>
-          </Link>
+          <Scroll to="top-of-scroll" smooth={true} duration={600}>
+            <div className="flex items-center cursor-pointer hover:text-pink-500 duration-200 sp:text-xs tab:text-base pc:text-lg">
+              <SiAcclaim />
+              <p className="underline ml-2">back to top</p>
+            </div>
+          </Scroll>
         </div>
       </div>
     </footer>

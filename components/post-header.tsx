@@ -1,6 +1,6 @@
 import DateFormatter from "./date-formatter";
 import PostTitle from "./post-title";
-import Link from "next/link";
+import { createTags } from "lib/createTags";
 
 type Props = {
   title: string;
@@ -10,18 +10,13 @@ type Props = {
 };
 
 const PostHeader = ({ title, created_at, updated_at, categories }: Props) => {
+  const tags = createTags(categories);
   return (
     <>
       <div className="sp:w-11/12 pc:w-3/5 mx-auto mb-12">
         <PostTitle>{title}</PostTitle>
         <div className="flex justify-between">
-          <div>
-            <Link href={`/categories/${categories}`}>
-              <a className="bg-pink-500 rounded-full hover:bg-pink-300 text-white duration-200 ml-3 sp:text-xxs sp:p-1.5 tab:text-xs pc:text-sm pc:p-2">
-                {categories}
-              </a>
-            </Link>
-          </div>
+          <div>{tags}</div>
           <div>
             <div className="text-gray-400 text-right sp:text-xs tab:text-sm pc:text-lg">
               created_at:

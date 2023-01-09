@@ -1,4 +1,3 @@
-import DateFormatter from "./date-formatter";
 import Link from "next/link";
 import { IconContext } from "react-icons";
 import { SiRuby } from "react-icons/si";
@@ -9,14 +8,7 @@ import { SiJavascript } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { SiCss3 } from "react-icons/si";
 
-type Props = {
-  title: string;
-  created_at: string;
-  slug: string;
-  categories: string[];
-};
-
-const PostPreview = ({ title, created_at, slug, categories }: Props) => {
+export function createTags(categories: string[]) {
   type icon = JSX.Element | null;
   let icon;
   const tags = categories.map((category) => {
@@ -123,17 +115,5 @@ const PostPreview = ({ title, created_at, slug, categories }: Props) => {
     );
   });
 
-  return (
-    <section className="w-4/6 mx-auto my-10">
-      <DateFormatter dateString={created_at} />
-      {tags}
-      <h3 className="mb-12 mt-3 leading-snug hover:text-pink-500 duration-200 font-bold sp:text-xl tab:text-2xl pc:text-3xl">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="border-b-2 border-pink-500">{title}</a>
-        </Link>
-      </h3>
-    </section>
-  );
-};
-
-export default PostPreview;
+  return tags;
+}

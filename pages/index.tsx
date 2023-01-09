@@ -7,7 +7,7 @@ import Post from "../types/post";
 import fs from "fs";
 import matter from "gray-matter";
 import Pagination from "components/Pagination";
-import PostPreview from "components/post-preview";
+import ArchiveMenu from "components/ArchiveMenu";
 
 const PAGE_SIZE = 10;
 
@@ -20,8 +20,15 @@ type Props = {
   pages: any[];
 };
 
-const Index = ({ posts, pages }: Props) => {
-  // const morePosts = allPosts;
+const Index = ({ posts, pages, allPosts }: Props) => {
+  const morePosts = allPosts;
+  // Note: 'yyyy-mm-dd -> yyyy'
+  const created_at_list = morePosts.map((post) => post.created_at.slice(0, 4));
+  // Note: データの重複をなくし、年配列を作成
+  // Memo: posts/indexでも使用しているので後ほど共通化
+  const years = created_at_list.filter(
+    (element, index) => created_at_list.indexOf(element) === index
+  );
 
   return (
     <>
@@ -29,20 +36,9 @@ const Index = ({ posts, pages }: Props) => {
         <Head>
           <title>fqqk_devlog</title>
         </Head>
-        {/* <div>{posts.length > 0 && <MoreStories posts={morePosts} />}</div> */}
-        <section className="pt-10">
-          <div className="my-20">
-            {posts.map((post) => (
-              <PostPreview
-                key={post.slug}
-                title={post.frontMatter.title}
-                created_at={post.frontMatter.created_at}
-                slug={post.slug}
-                categories={post.frontMatter.categories}
-              />
-            ))}
-          </div>
-        </section>
+        <ArchiveMenu years={years} />
+        {posts.length > 0 && <MoreStories posts={morePosts} />}
+
         <Pagination pages={pages} />
       </Layout>
     </>
@@ -52,16 +48,14 @@ const Index = ({ posts, pages }: Props) => {
 export default Index;
 
 export const getStaticProps = async () => {
-  // const allPosts = getAllPosts([
-  //   "title",
-  //   "created_at",
-  //   "updated_at",
-  //   "slug",
-  //   "author",
-  //   "coverImage",
-  //   "excerpt",
-  //   "categories",
-  // ]);
+  const allPosts = getAllPosts([
+    "title",
+    "created_at",
+    "updated_at",
+    "slug",
+    "ogImage",
+    "categories",
+  ]);
 
   const files = fs.readdirSync("_posts");
   const posts = files.map((fileName) => {
@@ -82,7 +76,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      // allPosts,
+      allPosts,
       posts: sortedPosts.slice(0, PAGE_SIZE),
       pages,
     },
