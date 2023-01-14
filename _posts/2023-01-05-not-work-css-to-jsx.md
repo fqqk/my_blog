@@ -9,8 +9,6 @@ categories: ["tailwind"]
 
 ## 急に一部に css が効かなくなった
 
-<!-- https://zenn.dev/elpnt/articles/c17727e9d254ef00ea60 -->
-
 ![tagにcssが効かない](/assets/posts/notcss.png)
 
 ## 原因調査

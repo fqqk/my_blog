@@ -36,6 +36,8 @@ I think there was a question on PM2.5.
 I got the impression that many of the questions in the latter half of the test could be solved by remembering the formulas, and it was significant that I was able to catch up here.
 I would have liked to get 80% if possible. But a pass is a pass, so I'm proud of myself.
 
+![result](/assets/posts/statistics_test_level_2.JPG)
+
 ## Next
 
 In the future, I would like to relearn university mathematics from scratch in order to pass the first level of the Statistics Proficiency Test.
