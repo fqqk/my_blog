@@ -4,18 +4,16 @@ import Pagination from "../../components/Pagination";
 import Layout from "components/layout";
 import PostPreview from "components/post-preview";
 import Head from "next/head";
-import { CMS_NAME } from "lib/constants";
+import { BLOG_NAME } from "lib/constants";
 
 const PAGE_SIZE = 10;
 
-const range = (start, end, length = end - start + 1) =>
+const range = (start: number, end: number, length = end - start + 1) =>
   Array.from({ length }, (_, i) => start + i);
 
 export async function getStaticPaths() {
   const files = fs.readdirSync("_posts");
   const count = files.length;
-  console.log("filecount", count);
-
   const paths = range(1, Math.ceil(count / PAGE_SIZE)).map((i) => ({
     params: { page: i.toString() },
   }));
@@ -26,7 +24,13 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
+type ParamsProps = {
+  params: {
+    page: number;
+  };
+};
+
+export async function getStaticProps({ params }: ParamsProps) {
   const current_page = params.page;
   const files = fs.readdirSync("_posts");
   const posts = files.map((fileName) => {
@@ -60,11 +64,22 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Page = ({ posts, pages, current_page }) => {
+type Props = {
+  posts: {
+    frontMatter: {
+      [key: string]: any;
+    };
+    slug: string;
+  }[];
+  pages: number[] | null;
+  current_page: number | undefined;
+};
+
+const Page = ({ posts, pages, current_page }: Props) => {
   return (
     <Layout>
       <Head>
-        <title>Next.js Blog Example with {CMS_NAME}</title>
+        <title>{BLOG_NAME}</title>
       </Head>
       {/* <div>{posts.length > 0 && <MoreStories posts={morePosts} />}</div> */}
       <section className="pt-10">

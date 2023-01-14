@@ -1,6 +1,14 @@
 import Link from "next/link";
 
-const Pagination = ({ pages, current_page = 1 }) => {
+type Props = {
+  pages: number[] | null;
+  current_page?: number | undefined;
+};
+
+const Pagination = ({ pages, current_page = 1 }: Props) => {
+  if (pages == null) {
+    return null;
+  }
   return (
     <div className="flex items-center space-x-1 mt-8 justify-center">
       {pages.map((page) => (

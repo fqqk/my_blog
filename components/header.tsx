@@ -1,6 +1,7 @@
 import Ancher from "atom/PostAncher";
 import { ChangeThemeButton } from "atom/ChangeThemeButton";
 import useMedia from "use-media";
+import { BLOG_NAME } from "lib/constants";
 
 const Header = () => {
   const isWide = useMedia({ minWidth: "520px" });
@@ -10,7 +11,7 @@ const Header = () => {
         <>
           <nav className="w-11/12 flex lg:flex-row items-center justify-between px-10 py-6 mx-auto border-x-2 border-pink-400">
             <div className="space-x-8 items-center">
-              <Ancher path="/">Fqqk blog</Ancher>
+              <Ancher path="/">{BLOG_NAME}</Ancher>
               <Ancher path="/portfolio">portfolio</Ancher>
               <Ancher path="#">rss</Ancher>
               <Ancher path="#">search</Ancher>
@@ -23,7 +24,7 @@ const Header = () => {
       ) : (
         <nav className="w-11/12 flex items-center justify-between px-10 py-6 mx-auto border-x-2 border-pink-400">
           <div>
-            <Ancher path="/">Fqqk blog</Ancher>
+            <Ancher path="/">{BLOG_NAME}</Ancher>
             <div className="mt-2 space-x-4">
               <Ancher path="/portfolio">portfolio</Ancher>
               <Ancher path="#">rss</Ancher>

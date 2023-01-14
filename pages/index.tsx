@@ -2,7 +2,7 @@ import MoreStories from "../components/more-stories";
 import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
-import { CMS_NAME } from "../lib/constants";
+import { BLOG_NAME } from "../lib/constants";
 import Post from "../types/post";
 import fs from "fs";
 import matter from "gray-matter";
@@ -11,13 +11,18 @@ import ArchiveMenu from "components/ArchiveMenu";
 
 const PAGE_SIZE = 10;
 
-const range = (start, end, length = end - start + 1) =>
+const range = (start: number, end: number, length = end - start + 1) =>
   Array.from({ length }, (_, i) => start + i);
 
 type Props = {
   allPosts: Post[];
-  posts: any;
-  pages: any[];
+  posts: {
+    frontMatter: {
+      [key: string]: any;
+    };
+    slug: string;
+  }[];
+  pages: number[] | null;
 };
 
 const Index = ({ posts, pages, allPosts }: Props) => {
@@ -34,7 +39,7 @@ const Index = ({ posts, pages, allPosts }: Props) => {
     <>
       <Layout>
         <Head>
-          <title>fqqk_devlog</title>
+          <title>{BLOG_NAME}</title>
         </Head>
         <ArchiveMenu years={years} />
         {posts.length > 0 && <MoreStories posts={morePosts} />}
