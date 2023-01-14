@@ -11,7 +11,7 @@ categories: ["tailwind"]
 
 <!-- https://zenn.dev/elpnt/articles/c17727e9d254ef00ea60 -->
 
-![tagにcssが効かない](http://localhost:3300/public/assets/posts/notcss.png)
+![tagにcssが効かない](/assets/posts/notcss.png)
 
 ## 原因調査
 
