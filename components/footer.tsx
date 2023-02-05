@@ -1,9 +1,19 @@
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { SiAcclaim } from "react-icons/si";
-import { Link as Scroll } from "react-scroll";
+import { RefObject } from "react";
 
-const Footer = () => {
+type Props = {
+  targetEl: RefObject<HTMLDivElement>;
+};
+
+const Footer = ({ targetEl }: Props) => {
+  const scrollTop = () => {
+    targetEl?.current?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className="bg-neutral-50 dark:bg-gray-800">
       <div className="w-11/12 mx-auto border-x-2 border-pink-400 py-28">
@@ -17,12 +27,12 @@ const Footer = () => {
               <FaGithub size={"1.5rem"} />
             </a>
           </div>
-          <Scroll to="top-of-scroll" smooth={true} duration={600}>
-            <div className="flex items-center cursor-pointer hover:text-pink-500 duration-200 sp:text-xs tab:text-base pc:text-lg">
-              <SiAcclaim />
-              <p className="underline ml-2">back to top</p>
-            </div>
-          </Scroll>
+          <div className="flex items-center cursor-pointer hover:text-pink-500 duration-200 sp:text-xs tab:text-base pc:text-lg">
+            <SiAcclaim />
+            <button className="underline ml-2" onClick={scrollTop}>
+              back to top
+            </button>
+          </div>
         </div>
       </div>
     </footer>
