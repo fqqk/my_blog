@@ -8,13 +8,13 @@ const Meta = () => {
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/favicon/fqqk_favicon_32x32.png"
+        href="/favicon/IT_Fox_32x32.png"
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/favicon/fqqk_favicon_16x16.png"
+        href="/favicon/IT_Fox_16x16.png"
       />
       <link rel="manifest" href="/favicon/site.webmanifest" />
       <link rel="shortcut icon" href="/favicon/favicon.ico" />
