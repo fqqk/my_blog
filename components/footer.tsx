@@ -1,6 +1,5 @@
-import { FaGithub } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
-import { SiAcclaim } from "react-icons/si";
+import { FaGithub, FaTwitter } from "react-icons/fa";
+import { SiAcclaim, SiZenn } from "react-icons/si";
 import { RefObject } from "react";
 
 type Props = {
@@ -33,6 +32,9 @@ const Footer = ({ targetEl }: Props) => {
             </a>
             <a href="https://github.com/fqqk" target="blank">
               <FaGithub size={"1.5rem"} />
+            </a>
+            <a href="https://zenn.dev/fqqk" target="blank">
+              <SiZenn color={"#1DA1F2"}/>
             </a>
           </div>
           <div className="flex items-center cursor-pointer hover:text-pink-500 duration-200 sp:text-xs tab:text-base pc:text-lg">

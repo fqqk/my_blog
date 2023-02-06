@@ -15,7 +15,9 @@ export default async function markdownToHtml(markdown: string) {
     .use(remarkToc, {
       heading: "目次",
     })
-    .use(remarkRehype)
+    .use(remarkRehype,{
+      allowDangerousHtml: true
+    })
     .use(rehypeReact, {
       Fragment: React.Fragment,
       createElement: React.createElement,
@@ -24,7 +26,9 @@ export default async function markdownToHtml(markdown: string) {
       },
     })
     .use(rehypeSlug)
-    .use(rehypeStringify)
+    .use(rehypeStringify,{
+      allowDangerousHtml: true
+    })
     .process(markdown);
   return result.toString();
 }
