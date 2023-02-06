@@ -49,8 +49,8 @@ Until I am able to do so, I will continue to study hard.
 
 ## Thanks for your support.
 
-- [bellcurve 統計学の時間](https://bellcurve.jp/statistics/course/)
-- [統計検定過去問](https://www.toukei-kentei.jp/prepare/kakomon/)
-- [あつまれ統計の森](https://www.hello-statisticians.com/)
-- [ヨビノリ 確率統計](https://www.youtube.com/playlist?list=PLDJfzGjtVLHmx7qMP410-9gx0weC9d90X)
-- [統計チャンネル](https://www.youtube.com/channel/UCRkhg8uBdVFG9DVy6528hTw/videos)
+- <a href='https://bellcurve.jp/statistics/course/' target="_blank">bellcurve 統計学の時間</a>
+- <a href='https://www.toukei-kentei.jp/prepare/kakomon/' target="_blank">統計検定過去問</a>
+- <a href='https://www.hello-statisticians.com/' target="_blank">あつまれ統計の森</a>
+- <a href='https://www.youtube.com/playlist?list=PLDJfzGjtVLHmx7qMP410-9gx0weC9d90X' target="_blank">ヨビノリ 確率統計</a>
+- <a href='https://www.youtube.com/channel/UCRkhg8uBdVFG9DVy6528hTw/videos' target="_blank">統計チャンネル</a>
