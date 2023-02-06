@@ -1,7 +1,6 @@
 import PostAnchor from "atom/PostAnchor";
 import { ChangeThemeButton } from "atom/ChangeThemeButton";
 import useMedia from "use-media";
-import { BLOG_NAME } from "lib/constants";
 
 const Header = () => {
   const isWide = useMedia({ minWidth: "520px" });

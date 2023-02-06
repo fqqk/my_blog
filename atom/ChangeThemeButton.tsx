@@ -1,6 +1,6 @@
 import React, { useState, useEffect, VFC } from "react";
 import { useTheme } from "next-themes";
-import { SunLight, HalfMoon } from "iconoir-react";
+import { BiSun, BiMoon } from "react-icons/bi";
 
 export const ChangeThemeButton: VFC = () => {
   const { theme, setTheme } = useTheme();
@@ -15,7 +15,7 @@ export const ChangeThemeButton: VFC = () => {
         type="button"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
-        {mounted && <>{theme === "dark" ? <SunLight /> : <HalfMoon />}</>}
+        {mounted && <>{theme === "dark" ? <BiSun size={"1.5rem"}/> : <BiMoon size={"1.5rem"}/>}</>}
       </button>
     </>
   );
