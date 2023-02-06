@@ -3,12 +3,12 @@
   "short_name": "fqqk",
   "icons": [
     {
-      "src": "/favicons/fqqk192x192.png",
+      "src": "/favicons/IT_Fox192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/favicons/fqqk512x512.png",
+      "src": "/favicons/IT_Fox512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
