@@ -15,8 +15,8 @@ const Header = () => {
               </figure>
               <PostAnchor path="/">Home</PostAnchor>
               <PostAnchor path="/portfolio">portfolio</PostAnchor>
-              <PostAnchor path="#">rss</PostAnchor>
-              <PostAnchor path="#">search</PostAnchor>
+              {/* <PostAnchor path="#">rss</PostAnchor>
+              <PostAnchor path="#">search</PostAnchor> */}
             </div>
             <div className="flex items-center space-x-10">
               <ChangeThemeButton />
@@ -31,8 +31,8 @@ const Header = () => {
             </figure>
             <PostAnchor path="/">Home</PostAnchor>
             <PostAnchor path="/portfolio">portfolio</PostAnchor>
-            <PostAnchor path="#">rss</PostAnchor>
-            <PostAnchor path="#">search</PostAnchor>
+            {/* <PostAnchor path="#">rss</PostAnchor>
+            <PostAnchor path="#">search</PostAnchor> */}
           </div>
           <ChangeThemeButton />
         </nav>
