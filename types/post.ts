@@ -3,9 +3,9 @@ type PostType = {
   title: string;
   created_at: string;
   updated_at: string;
-  coverImage: string;
-  excerpt: string;
-  ogImage: {
+  coverImage?: string;
+  excerpt?: string;
+  ogImage?: {
     url: string;
   };
   content: string;

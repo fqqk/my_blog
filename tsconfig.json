@@ -30,8 +30,7 @@
       "@/*": [
         "./src/*"
       ]
-    },
-    "strict": false
+    }
   },
   "exclude": [
     "node_modules"

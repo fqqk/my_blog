@@ -2,9 +2,10 @@ import fs from "fs";
 import matter from "gray-matter";
 import Pagination from "../../components/Pagination";
 import Layout from "components/layout";
-import PostPreview from "components/post-preview";
 import Head from "next/head";
 import { BLOG_NAME } from "lib/constants";
+import ArchiveMenu from "components/ArchiveMenu";
+import MoreStories from "components/more-stories";
 
 const PAGE_SIZE = 10;
 
@@ -47,7 +48,10 @@ export async function getStaticProps({ params }: ParamsProps) {
   const pages = range(1, Math.ceil(posts.length / PAGE_SIZE));
 
   const sortedPosts = posts.sort((postA, postB) =>
-    new Date(postA.frontMatter.date) > new Date(postB.frontMatter.date) ? -1 : 1
+    new Date(postA.frontMatter.created_at) >
+    new Date(postB.frontMatter.created_at)
+      ? -1
+      : 1
   );
 
   const slicedPosts = sortedPosts.slice(
@@ -76,25 +80,30 @@ type Props = {
 };
 
 const Page = ({ posts, pages, current_page }: Props) => {
+  const morePosts = posts.map((post) => {
+    return {
+      slug: post.slug,
+      title: post.frontMatter.title,
+      created_at: post.frontMatter.created_at,
+      updated_at: post.frontMatter.updated_at,
+      categories: post.frontMatter.categories,
+      content: "",
+    };
+  });
+  // Note: 'yyyy-mm-dd -> yyyy'
+  const created_at_list = morePosts.map((post) => post.created_at.slice(0, 4));
+  // Note: データの重複をなくし、年配列を作成
+  // Memo: posts/indexでも使用しているので後ほど共通化
+  const years = created_at_list.filter(
+    (element, index) => created_at_list.indexOf(element) === index
+  );
   return (
     <Layout>
       <Head>
         <title>{BLOG_NAME}</title>
       </Head>
-      {/* <div>{posts.length > 0 && <MoreStories posts={morePosts} />}</div> */}
-      <section className="pt-10">
-        <div className="my-20">
-          {posts.map((post) => (
-            <PostPreview
-              key={post.slug}
-              title={post.frontMatter.title}
-              created_at={post.frontMatter.created_at}
-              slug={post.slug}
-              categories={post.frontMatter.categories}
-            />
-          ))}
-        </div>
-      </section>
+      <ArchiveMenu years={years} />
+      {posts.length > 0 && <MoreStories posts={morePosts} />}
       <Pagination pages={pages} current_page={current_page} />
     </Layout>
   );
