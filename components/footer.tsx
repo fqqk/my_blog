@@ -15,8 +15,8 @@ const Footer = ({ targetEl }: Props) => {
 
   return (
     <footer className="bg-neutral-50 dark:bg-gray-800">
-      <div className="w-11/12 mx-auto border-x-2 border-pink-400 py-28">
-        <div className="ml-12">
+      <div className="w-full mx-auto py-28">
+        <div className="ml-8">
           <div className="flex sp:space-x-4 tab:space-x-8 pc:space-x-10 mr-12 mb-4 items-center">
             <div>
               <span className="sp:text-xs tab:text-base pc:text-lg">
