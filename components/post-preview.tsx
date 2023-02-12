@@ -124,7 +124,7 @@ const PostPreview = ({ title, created_at, slug, categories }: Props) => {
   });
 
   return (
-    <section className="w-4/6 mx-auto my-10">
+    <section className="w-5/6 mx-auto my-10">
       <DateFormatter dateString={created_at} />
       {tags}
       <h3 className="mb-12 mt-3 leading-snug hover:text-pink-500 duration-200 font-bold sp:text-xl tab:text-2xl pc:text-3xl">

@@ -15,7 +15,7 @@ const Layout = ({ children }: Props) => {
       <Meta />
       <Header />
       <div
-        className="min-h-screen w-11/12 m-auto border-pink-400 border-x-2"
+        className="min-h-screen w-full m-auto"
         ref={scrollTopRef}
       >
         <main>{children}</main>

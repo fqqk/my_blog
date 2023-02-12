@@ -16,7 +16,7 @@ const ArchiveMenu = ({ years }: Props) => {
     );
   });
   return (
-    <div className="pt-32 w-4/6 mx-auto">
+    <div className="pt-32 w-5/6 mx-auto">
       <h3 className="font-bold mb-2 sp:text-xl tab:text-2xl pc:text-3xl">
         Archive
       </h3>

@@ -92,7 +92,7 @@ const Category = ({ posts, params }: Props) => {
       <div className="my-8">
         <section className="pt-10">
           <div className="my-20">
-            <div className="w-4/6 mx-auto my-10">
+            <div className="w-5/6 mx-auto my-10">
               <h1 className="sp:text-xl tab:text-2xl pc:text-3xl font-bold">" {tag} "での絞り込み結果</h1>
             </div>
             {posts.map((post) => (
