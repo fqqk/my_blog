@@ -24,7 +24,7 @@ const Meta = () => {
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
         name="description"
-        content={`A statically generated blog example using Next.js and ${BLOG_NAME}.`}
+        content="技術のこと、プライベートについて書いてます。"
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
