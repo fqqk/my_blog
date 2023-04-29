@@ -27,5 +27,5 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-        run: |
-          node services/notion/blogFetcher.ts
+      - name: output Hello, world!
+        run: echo "Hello, world!"
