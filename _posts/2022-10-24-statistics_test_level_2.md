@@ -2,7 +2,7 @@
 title: "After taking the Statistics Test Level 2"
 created_at: "2022-10-24"
 updated_at: "2022-10-24"
-categories: ["statistics"]
+tags: ["statistics"]
 ---
 
 ## 目次

@@ -86,7 +86,7 @@ const Page = ({ posts, pages, current_page }: Props) => {
       title: post.frontMatter.title,
       created_at: post.frontMatter.created_at,
       updated_at: post.frontMatter.updated_at,
-      categories: post.frontMatter.categories,
+      tags: post.frontMatter.tags,
       content: "",
     };
   });

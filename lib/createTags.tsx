@@ -8,11 +8,11 @@ import { SiJavascript } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
 import { SiCss3 } from "react-icons/si";
 
-export function createTags(categories: string[]) {
+export function createTags(tags: string[]) {
   type icon = JSX.Element | null;
   let icon;
-  const tags = categories.map((category) => {
-    switch (category) {
+  const _tags = tags.map((tag) => {
+    switch (tag) {
       case "react":
         icon = (
           <IconContext.Provider
@@ -107,13 +107,13 @@ export function createTags(categories: string[]) {
         icon = null;
     }
     return (
-      <Link href={`/categories/${category}`}>
+      <Link href={`/tags/${tag}`}>
         <a className="bg-pink-500 rounded-full hover:bg-pink-300 text-white duration-200 ml-3 sp:text-xxs sp:p-1.5 tab:text-xs pc:text-sm pc:p-2">
-          {icon ? icon : category}
+          {icon ? icon : tag}
         </a>
       </Link>
     );
   });
 
-  return tags;
+  return _tags;
 }

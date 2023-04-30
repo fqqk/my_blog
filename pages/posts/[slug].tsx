@@ -38,7 +38,7 @@ const Post = ({ post }: Props) => {
                 title={post.title}
                 created_at={post.created_at}
                 updated_at={post.updated_at}
-                categories={post.categories}
+                tags={post.tags}
               />
               <PostBody content={post.content} />
             </article>
@@ -67,7 +67,7 @@ export async function getStaticProps({ params }: Params) {
     "content",
     "ogImage",
     "coverImage",
-    "categories",
+    "tags",
   ]);
   const content = await markdownToHtml(post.content || "");
 
