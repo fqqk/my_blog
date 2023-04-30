@@ -1,0 +1,31 @@
+name: Notion to markdown generator
+
+# TODO: 手動実行の場合
+on: workflow_dispatch
+
+# TODO: 定期実行の場合
+# on:
+#   schedule:
+    # * is a special character in YAML so you have to quote this string
+    # - cron:  '0 1 * * 0'
+
+jobs:
+  notion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Fetch Notion Data
+        uses: jaydenseric/graphql-request@v2.2.0
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+      - name: output Hello, world!
+        run: echo "Hello, world!"
