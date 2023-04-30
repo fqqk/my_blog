@@ -59,13 +59,13 @@ export const getStaticPaths = () => {
     return post.frontMatter.categories;
   });
 
-  const unduplicate_categories = duplicate_categories.filter(
+  const not_duplicate_categories = duplicate_categories.filter(
     (el, index, array) => {
       return array.indexOf(el) === index;
     }
   );
 
-  const paths = unduplicate_categories.map((category: string) => ({
+  const paths = not_duplicate_categories.map((category: string) => ({
     params: { category },
   }));
 
