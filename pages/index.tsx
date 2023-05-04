@@ -53,13 +53,14 @@ const Index = ({ posts, pages, allPosts }: Props) => {
 export default Index;
 
 export const getStaticProps = async () => {
+  // fetchNotion();
   const allPosts = getAllPosts([
     "title",
     "created_at",
     "updated_at",
     "slug",
     "ogImage",
-    "categories",
+    "tags",
   ]);
 
   const files = fs.readdirSync("_posts");
@@ -74,7 +75,10 @@ export const getStaticProps = async () => {
   });
 
   const sortedPosts = posts.sort((postA, postB) =>
-    new Date(postA.frontMatter.created_at) > new Date(postB.frontMatter.created_at) ? -1 : 1
+    new Date(postA.frontMatter.created_at) >
+    new Date(postB.frontMatter.created_at)
+      ? -1
+      : 1
   );
 
   const pages = range(1, Math.ceil(posts.length / PAGE_SIZE));

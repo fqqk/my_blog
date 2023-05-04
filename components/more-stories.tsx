@@ -37,7 +37,7 @@ const MoreStories = ({ posts }: Props) => {
           title={post.title}
           created_at={post.created_at}
           slug={post.slug}
-          categories={post.categories}
+          tags={post.tags}
         />
       );
     });

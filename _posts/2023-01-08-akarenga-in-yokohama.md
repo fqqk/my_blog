@@ -2,7 +2,7 @@
 title: "[外出記録]横浜の赤レンガ倉庫に行ってみた"
 created_at: "2023-01-08"
 updated_at: "2023-01-08"
-categories: ["self"]
+tags: ["self"]
 ---
 
 ## 目次

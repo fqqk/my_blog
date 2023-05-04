@@ -2,7 +2,7 @@ type FrontMatterType = {
   title: string;
   created_at: string;
   updated_at: string;
-  categories: string[];
+  tags: string[];
 };
 
 export default FrontMatterType;

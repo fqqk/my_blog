@@ -1,31 +1,38 @@
 name: Notion to markdown generator
 
-# TODO: 手動実行の場合
-on: workflow_dispatch
-
-# TODO: 定期実行の場合
-# on:
-#   schedule:
-    # * is a special character in YAML so you have to quote this string
-    # - cron:  '0 1 * * 0'
+on:
+  schedule:
+    - cron:  '0 1 * * 0'
+  workflow_dispatch:
 
 jobs:
   notion:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: '18.x'
       - name: Install dependencies
-        run: npm install
-      - name: Build
-        run: npm run build
-      - name: Fetch Notion Data
-        uses: jaydenseric/graphql-request@v2.2.0
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
-      - name: output Hello, world!
-        run: echo "Hello, world!"
+        run: yarn install
+      - name: Set up Git
+        run: |
+          git config --global user.email "${{ secrets.USER_EMAIL }}"
+          git config --global user.name "fqqk"
+      - name: create .env file
+        run: |
+            cat > .env <<EOF
+            NOTION_TOKEN=${{ secrets.NOTION_TOKEN }}
+            NOTION_DATABASE_ID=${{ secrets.NOTION_DATABASE_ID }}
+            PROP_NAME_TITLE=${{ secrets.PROP_NAME_TITLE }}
+            PROP_NAME_TAG=${{ secrets.PROP_NAME_TAG }}
+            PROP_NAME_FILE_NAME=${{ secrets.PROP_NAME_FILE_NAME }}
+            PROP_NAME_PUBLIC=${{ secrets.PROP_NAME_PUBLIC }}
+            THIS_GITHUB_REPO=${{ secrets.THIS_GITHUB_REPO }}
+            THIS_GITHUB_PAT=${{ secrets.THIS_GITHUB_PAT }}
+            BLOG_POST_DIR=${{ secrets.BLOG_POST_DIR }}
+            BLOG_ASSET_DIR=${{ secrets.BLOG_ASSET_DIR }}
+            EOF
+      - name: Run Notion to Markdown Generator
+        run: yarn execute

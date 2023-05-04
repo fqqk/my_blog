@@ -2,7 +2,7 @@
 title: "why do not work css?"
 created_at: "2023-01-05"
 updated_at: "2023-01-05"
-categories: ["tailwind"]
+tags: ["tailwind"]
 ---
 
 ## 目次

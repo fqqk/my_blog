@@ -6,7 +6,7 @@ import FrontMatterType from "../../types/frontMatter";
 
 type paramsType = {
   params: {
-    category: string;
+    tag: string;
   };
 };
 
@@ -22,10 +22,10 @@ export const getStaticProps = ({ params }: paramsType) => {
     };
   });
 
-  const category = params.category;
+  const tag = params.tag;
 
   const filteredPosts = posts.filter((post) => {
-    return post.frontMatter.categories.includes(category);
+    return post.frontMatter.tags.includes(tag);
   });
 
   const sortedPosts = filteredPosts.sort((postA, postB) =>
@@ -55,18 +55,16 @@ export const getStaticPaths = () => {
     };
   });
 
-  const duplicate_categories = posts.flatMap((post) => {
-    return post.frontMatter.categories;
+  const duplicate_tags = posts.flatMap((post) => {
+    return post.frontMatter.tags;
   });
 
-  const not_duplicate_categories = duplicate_categories.filter(
-    (el, index, array) => {
-      return array.indexOf(el) === index;
-    }
-  );
+  const not_duplicate_tags = duplicate_tags.filter((el, index, array) => {
+    return array.indexOf(el) === index;
+  });
 
-  const paths = not_duplicate_categories.map((category: string) => ({
-    params: { category },
+  const paths = not_duplicate_tags.map((tag: string) => ({
+    params: { tag },
   }));
 
   return {
@@ -81,19 +79,21 @@ type Props = {
     slug: string;
   }>;
   params: {
-    category: string;
+    tag: string;
   };
 };
 
-const Category = ({ posts, params }: Props) => {
-  const tag = params.category;
+const tag = ({ posts, params }: Props) => {
+  const tag = params.tag;
   return (
     <Layout>
       <div className="my-8">
         <section className="pt-10">
           <div className="my-20">
             <div className="w-5/6 mx-auto my-10">
-              <h1 className="sp:text-xl tab:text-2xl pc:text-3xl font-bold">" {tag} "での絞り込み結果</h1>
+              <h1 className="sp:text-xl tab:text-2xl pc:text-3xl font-bold">
+                " {tag} "での絞り込み結果
+              </h1>
             </div>
             {posts.map((post) => (
               <PostPreview
@@ -101,7 +101,7 @@ const Category = ({ posts, params }: Props) => {
                 title={post.frontMatter.title}
                 created_at={post.frontMatter.created_at}
                 slug={post.slug}
-                categories={post.frontMatter.categories}
+                tags={post.frontMatter.tags}
               />
             ))}
           </div>
@@ -111,4 +111,4 @@ const Category = ({ posts, params }: Props) => {
   );
 };
 
-export default Category;
+export default tag;
