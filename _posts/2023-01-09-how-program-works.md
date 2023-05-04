@@ -2,7 +2,7 @@
 title: "[書評]プログラムはなぜ動くのか"
 created_at: "2023-01-09"
 updated_at: "2023-01-09"
-categories: ["book review"]
+tags: ["book review"]
 ---
 
 ## 目次
