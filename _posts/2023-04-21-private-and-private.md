@@ -5,6 +5,7 @@ updated_at: "2023-05-04"
 tags: ["ruby"]
 ---
 
+## 目次
 # privateが２つ定義されていたのだが…
 
 
