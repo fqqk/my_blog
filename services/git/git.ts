@@ -16,12 +16,11 @@ type ImagePair = {
  */
 
 export class Git {
-  private _image_dir_prefix = "images/notion/";
   private _branch_local_prefix = "auto-generate/";
   private _branch_remote_prefix = `remotes/origin/${this._branch_local_prefix}`;
   private _branches:string[] = [];
-  private _blog_asset_dir = "";
-  private _blog_post_dir = "";
+  private _blog_asset_dir = ""; // ex.) "../src/assets/"
+  private _blog_post_dir = ""; // ex.) "content/posts/"
   private _github_repo_name = "";
   private _github_user = "";
 
@@ -61,8 +60,8 @@ export class Git {
     })
 
     const res = new Git(git, github_client, workDir);
-    res._blog_asset_dir = config.blog.asset_dir;
-    res._blog_post_dir = config.blog.post_dir;
+    res._blog_asset_dir = config.blog.asset_dir; // public/assets/notion
+    res._blog_post_dir = config.blog.post_dir; // _posts
     const github_repo_elems = config.github.repo.split("/");
     res._github_repo_name = github_repo_elems[github_repo_elems.length - 1].replace(".git", "");
     const user = await github_client.rest.users.getAuthenticated();
@@ -83,16 +82,16 @@ export class Git {
 
   public async process(page: NotionPageData, md: string) {
     const images = this.getImageURLFromMd(md);
-    let isDownloaded = false;
     md = this.replaceImageURLToPath(images, md);
     md = this.addHeaderToMd(page, md);
+    let isDownloaded = false;
 
     if(!this.branchExists(page.file_name)) {
       console.log("branch not exists. create new branch from main branch...");
       await this._git.checkoutLocalBranch(
         `${this._branch_local_prefix}${page.file_name}`
       );
-      console.log("Done");
+      console.log("checkout branch Done");
     }
 
     console.log("checking diff...");
@@ -102,9 +101,10 @@ export class Git {
     }
 
     if(images.length !== 0) {
+      fs.mkdirSync(this.getImageDir(), { recursive: true} );
       console.log("image downloading...");
       await this.downloadImages(images);
-      console.log("Done");
+      console.log("image downloading Done");
       isDownloaded = true;
     }
 
@@ -112,7 +112,7 @@ export class Git {
     console.log("some diff detected. updating or creating md...");
     fs.mkdirSync(this.getMdDir(), { recursive: true} );
     fs.writeFileSync(this.getMdPath(page), md);
-    console.log("Done");
+    console.log("mkdir for .md and write file Done");
 
     console.log("commit and push");
     await this._git.add(this.getMdPathForGit(page));
@@ -127,7 +127,7 @@ export class Git {
       `${this._branch_local_prefix}${page.file_name}`,
       { "--set-upstream": null }
     );
-    console.log("Done");
+    console.log("commit and push Done");
 
     // create PR if not exists
     const pr = await this._github.rest.search.issuesAndPullRequests({
@@ -142,7 +142,7 @@ export class Git {
         base: "main",
         title: this.getPRTitle(page),
       })
-      console.log("Done");
+      console.log("create PR Done");
       return;
     }
     console.log("PR already exists");
@@ -215,7 +215,7 @@ export class Git {
   }
 
   private getImageDir(): string {
-    return `${this._working_dir}${this._image_dir_prefix}`;
+    return `${this._working_dir}${this.getImageDirForGit()}`;
   }
 
   private getMdPathForGit(page: NotionPageData): string {
@@ -223,7 +223,7 @@ export class Git {
   }
 
   private getImageDirForGit(): string {
-    return `${this._image_dir_prefix}`;
+    return `${this._blog_asset_dir}/`;
   }
 
   private getMdDirForGit(): string {
@@ -259,9 +259,9 @@ export class Git {
       console.log(`downloading image: ${image.url}`);
       await download.image({
         url: image.url,
-        dest: `${process.cwd()}/${this.getImageDir()}${image.file_name}`,
+        dest: `${process.cwd()}/${this.getImageDir()}`,
       });
-      console.log("OK");
+      console.log("download image OK");
     }
   }
 
@@ -277,11 +277,24 @@ ${md}`;
 
   private replaceImageURLToPath(images: ImagePair[], md: string): string {
     for(const image of images) {
+      // e.g. image.url => IMG_892A68C4DE21-1.jpeg?xxxxx' 
+      const fileName = this.getFileNameFromUrl(image.url);
       md = md.replace(
         `![](${image.url})`,
-        `![${image.file_name}](${this._blog_asset_dir}${this._image_dir_prefix}${image.file_name})`
+        `![${fileName}](assets/notion/${fileName})`
       );
     }
     return md;
+  }
+
+  private getFileNameFromUrl(url: string): string {
+    const regex = /([^/?]+)(\?|$)/; // パスの末尾にあるファイル名を抽出する正規表現パターン
+  
+    const match = url.match(regex);
+    if (match && match[1]) {
+      return match[1];
+    } else {
+      throw new Error('Invalid URL format');
+    }
   }
 }
