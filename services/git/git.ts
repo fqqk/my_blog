@@ -60,7 +60,7 @@ export class Git {
     })
 
     const res = new Git(git, github_client, workDir);
-    res._blog_asset_dir = config.blog.asset_dir; // public/assets/notion
+    res._blog_asset_dir = config.blog.asset_dir; // public/assets/posts/notion
     res._blog_post_dir = config.blog.post_dir; // _posts
     const github_repo_elems = config.github.repo.split("/");
     res._github_repo_name = github_repo_elems[github_repo_elems.length - 1].replace(".git", "");
@@ -281,7 +281,7 @@ ${md}`;
       const fileName = this.getFileNameFromUrl(image.url);
       md = md.replace(
         `![](${image.url})`,
-        `![${fileName}](assets/notion/${fileName})`
+        `![${fileName}](assets/posts/notion/${fileName})`
       );
     }
     return md;
