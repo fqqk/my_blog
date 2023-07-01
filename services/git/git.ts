@@ -281,7 +281,7 @@ ${md}`;
       const fileName = this.getFileNameFromUrl(image.url);
       md = md.replace(
         `![](${image.url})`,
-        `![${fileName}](assets/posts/notion/${fileName})`
+        `![${fileName}](/assets/posts/notion/${fileName})`
       );
     }
     return md;
