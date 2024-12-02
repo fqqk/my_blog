@@ -8,6 +8,8 @@ tags: ["ruby","rails"]
 ## 目次
 
 
+この記事は [SUPER STUDIO Advent Calendar 2024](https://qiita.com/advent-calendar/2024/super-studio) の2日目の記事になります。
+
 ## 業務で遭遇した問題
 
 
