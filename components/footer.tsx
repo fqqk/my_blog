@@ -19,17 +19,11 @@ const Footer = ({ targetEl }: Props) => {
         <div className="ml-8">
           <div className="flex sp:space-x-4 tab:space-x-8 pc:space-x-10 mr-12 mb-4 items-center">
             <div>
-              <span className="sp:text-xs tab:text-base pc:text-lg">
-                follow
-              </span>
               <figure className="rounded-full w-8 h-8 truncate inline-block align-middle mx-2">
                 <img src="/favicon/IT_Fox_64x64.png" alt="IT_Fox" />
               </figure>
               <span>:</span>
             </div>
-            <a href="https://twitter.com/fqqk_t0ma" target="blank">
-              <FaTwitter size={"1.5rem"} color={"#1DA1F2"} />
-            </a>
             <a href="https://github.com/fqqk" target="blank">
               <FaGithub size={"1.5rem"} />
             </a>
