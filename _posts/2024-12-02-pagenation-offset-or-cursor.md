@@ -134,7 +134,7 @@ cursor = 2
 ## 実際どのくらいパフォーマンスに差があるのか
 
 
-[https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b](https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b)
+[offset-vs-cursor-based-pagination-choosing-the-best-approach](https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b)
 
 
 にてデータ数を0 - 100,000までの間で調節してクエリ実行時間を計測したものを添付します。
@@ -155,7 +155,7 @@ cursor = 2
 一見カーソルベースのほうがパフォーマンス的に優秀そうだし、実装面も思ったより複雑にならなさそうだからカーソルベース1択で良いのでは？と思ったのですが、オフセットにはオフセットの良いところがあります。
 
 
-[https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b](https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b)
+[offset-vs-cursor-based-pagination-choosing-the-best-approach](https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b)
 
 
 こちらの記事が非常にわかりやすくまとめてくれているので、基本的に上記記事を見てもらえれば良いと思います。
@@ -176,7 +176,7 @@ cursor = 2
 ### Kaminari /kaminari-core/lib/kaminari/models/page_scope_methods.rb#per
 
 
-[https://github.com/kaminari/kaminari/blob/40e8d9cd2bad69940170cab2c9df4b083ba6bd32/kaminari-core/lib/kaminari/models/page_scope_methods.rb#L7-L19](https://github.com/kaminari/kaminari/blob/40e8d9cd2bad69940170cab2c9df4b083ba6bd32/kaminari-core/lib/kaminari/models/page_scope_methods.rb#L7-L19)
+[kaminari-core/lib/kaminari/models/page_scope_methods.rb#L7-L19](https://github.com/kaminari/kaminari/blob/40e8d9cd2bad69940170cab2c9df4b083ba6bd32/kaminari-core/lib/kaminari/models/page_scope_methods.rb#L7-L19)
 
 
 ```ruby
@@ -309,7 +309,7 @@ module ActiveRecordCursorPaginate
 ここでcursor_positionsを決めるときのzipメソッドについて📝
 
 
-[https://docs.ruby-lang.org/ja/latest/method/Array/i/zip.html](https://docs.ruby-lang.org/ja/latest/method/Array/i/zip.html)
+[Array#zip](https://docs.ruby-lang.org/ja/latest/method/Array/i/zip.html)
 
 
 ```ruby
@@ -338,7 +338,7 @@ WHERE created_at > '2024-01-01 00:00:00' # 1回目のarel_columnの構築分
 より詳しい内容は以下を参照してみてください。
 
 
-[https://github.com/healthie/activerecord_cursor_paginate/blob/a8d16e016c15c37de1be731ea606bb780f4f9b23/lib/activerecord_cursor_paginate/cursor.rb#L15C1-L45C8](https://github.com/healthie/activerecord_cursor_paginate/blob/a8d16e016c15c37de1be731ea606bb780f4f9b23/lib/activerecord_cursor_paginate/cursor.rb#L15C1-L45C8)
+[activerecord_cursor_paginate/cursor.rb#L15C1-L45C8](https://github.com/healthie/activerecord_cursor_paginate/blob/a8d16e016c15c37de1be731ea606bb780f4f9b23/lib/activerecord_cursor_paginate/cursor.rb#L15C1-L45C8)
 
 
 業務で実装した際のカーソルの生成と適用のコードを紹介します。
