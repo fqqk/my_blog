@@ -9,7 +9,7 @@ tags: ["tailwind"]
 
 ## 急に一部に css が効かなくなった
 
-![tagにcssが効かない](/assets/posts/notcss.png)
+![tagにcssが効かない](/assets/notcss.png)
 
 ## 原因調査
 
