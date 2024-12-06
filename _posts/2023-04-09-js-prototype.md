@@ -60,7 +60,7 @@ let person2 = new Person("Bob", 25);
 
 以下は JavaScript 本格入門に載っていた図である。
 
-![js_prototype](/assets/posts/js_prototype/js_prototype.png)
+![js_prototype](/assets/js_prototype/js_prototype.png)
 
 JavaScript はクラスベースのオブジェクト指向言語とは異なり、動的にメソッドを追加することができる。
 上記図はそのことを表しており、コードで表現すると以下のようになる。
@@ -93,7 +93,7 @@ JavaScript においてインスタンス共通のメソッドを定義するに
 
 という問題がある。
 
-![コンストラクタにおける「無駄な」メモリを消費](/assets/posts/js_prototype/constructor_problem.png)
+![コンストラクタにおける「無駄な」メモリを消費](/assets/js_prototype/constructor_problem.png)
 
 その問題を解決すべく、`prototype`というプロパティが存在する
 
@@ -106,7 +106,7 @@ prototype プロパティに格納されたメンバはインスタンス化さ�
 
 オブジェクトをインスタンス化した場合、インスタンスは基となるオブジェクトに属する prototype オブジェクトに対して暗黙的な参照を持つことになる。**コピーではない。**
 
-![prototypeによるメモリ節約](/assets/posts/js_prototype/solution_prototype.png)
+![prototypeによるメモリ節約](/assets/js_prototype/solution_prototype.png)
 
 コード上だと以下のようになる。
 
@@ -203,7 +203,7 @@ JavaScript ではプロトタイプにインスタンスを設定することで
 
 このようなプロトタイプの連なりを **プロトタイプチェーン** という。
 
-![プロトタイプチェーン](/assets/posts/js_prototype/prototype_chain.png)
+![プロトタイプチェーン](/assets/js_prototype/prototype_chain.png)
 
 ## Backbone.js で少しわかったこと
 
