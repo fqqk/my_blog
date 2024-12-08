@@ -59,7 +59,7 @@ LIMITは取得するデータ数を制限しています。
 以下取得イメージ図です。
 
 
-![offset pagenation](/assets/notion/offset_pagination.png)
+![%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-12-03_19.08.10.png](assets/notion/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-12-03_19.08.10.png)
 
 
 実装面においてラクというのがオフセットベースの利点です。
@@ -119,7 +119,7 @@ cursor = 2
 ```
 
 
-![cursor pagination](/assets/notion/cursor_pagination.png)
+![%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-12-03_19.18.15.png](assets/notion/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-12-03_19.18.15.png)
 
 
 このカーソルベースを先程のレストランの行列待ちの例に適応させます。
@@ -134,13 +134,13 @@ cursor = 2
 ## 実際どのくらいパフォーマンスに差があるのか
 
 
-[offset-vs-cursor-based-pagination-choosing-the-best-approach](https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b)
+[https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b](https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b)
 
 
 にてデータ数を0 - 100,000までの間で調節してクエリ実行時間を計測したものを添付します。
 
 
-![offset と cursor のクエリ実行時間比較](/assets/notion/offset_or_cursor_query_exec_performance.png)
+![%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-12-05_18.08.51.png](assets/notion/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2024-12-05_18.08.51.png)
 
 
 これによるとデータ数1万件の時点からかなり差が出始めています。
@@ -155,19 +155,17 @@ cursor = 2
 一見カーソルベースのほうがパフォーマンス的に優秀そうだし、実装面も思ったより複雑にならなさそうだからカーソルベース1択で良いのでは？と思ったのですが、オフセットにはオフセットの良いところがあります。
 
 
-[offset-vs-cursor-based-pagination-choosing-the-best-approach](https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b)
+[https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b](https://medium.com/@maryam-bit/offset-vs-cursor-based-pagination-choosing-the-best-approach-2e93702a118b)
 
 
 こちらの記事が非常にわかりやすくまとめてくれているので、基本的に上記記事を見てもらえれば良いと思います。
 
-- オフセット
-  - 並び替えのしやすさ: 柔軟
-  - パフォーマンス: データ数が多いと低
-  - 位置の指定: 可能
-- カーソル
-  - 並び替えのしやすさ: 柔軟さと実装の複雑化がトレードオフ
-  - パフォーマンス: 高
-  - 位置の指定: 不可能
+
+|           | オフセット     | カーソル              |
+| --------- | --------- | ----------------- |
+| 並び替えのしやすさ | 柔軟        | 柔軟さと実装の複雑化がトレードオフ |
+| パフォーマンス   | データ数が多いと低 | 高                 |
+| 位置の指定     | 可能        | 不可能               |
 
 
 ## 実装の違いについてGemを見てみる
@@ -176,7 +174,7 @@ cursor = 2
 ### Kaminari /kaminari-core/lib/kaminari/models/page_scope_methods.rb#per
 
 
-[kaminari-core/lib/kaminari/models/page_scope_methods.rb#L7-L19](https://github.com/kaminari/kaminari/blob/40e8d9cd2bad69940170cab2c9df4b083ba6bd32/kaminari-core/lib/kaminari/models/page_scope_methods.rb#L7-L19)
+[https://github.com/kaminari/kaminari/blob/40e8d9cd2bad69940170cab2c9df4b083ba6bd32/kaminari-core/lib/kaminari/models/page_scope_methods.rb#L7-L19](https://github.com/kaminari/kaminari/blob/40e8d9cd2bad69940170cab2c9df4b083ba6bd32/kaminari-core/lib/kaminari/models/page_scope_methods.rb#L7-L19)
 
 
 ```ruby
@@ -309,7 +307,7 @@ module ActiveRecordCursorPaginate
 ここでcursor_positionsを決めるときのzipメソッドについて📝
 
 
-[Array#zip](https://docs.ruby-lang.org/ja/latest/method/Array/i/zip.html)
+[https://docs.ruby-lang.org/ja/latest/method/Array/i/zip.html](https://docs.ruby-lang.org/ja/latest/method/Array/i/zip.html)
 
 
 ```ruby
@@ -338,7 +336,7 @@ WHERE created_at > '2024-01-01 00:00:00' # 1回目のarel_columnの構築分
 より詳しい内容は以下を参照してみてください。
 
 
-[activerecord_cursor_paginate/cursor.rb#L15C1-L45C8](https://github.com/healthie/activerecord_cursor_paginate/blob/a8d16e016c15c37de1be731ea606bb780f4f9b23/lib/activerecord_cursor_paginate/cursor.rb#L15C1-L45C8)
+[https://github.com/healthie/activerecord_cursor_paginate/blob/a8d16e016c15c37de1be731ea606bb780f4f9b23/lib/activerecord_cursor_paginate/cursor.rb#L15C1-L45C8](https://github.com/healthie/activerecord_cursor_paginate/blob/a8d16e016c15c37de1be731ea606bb780f4f9b23/lib/activerecord_cursor_paginate/cursor.rb#L15C1-L45C8)
 
 
 業務で実装した際のカーソルの生成と適用のコードを紹介します。
